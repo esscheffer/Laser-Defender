@@ -605,17 +605,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 722847600783504366, guid: e48b4a5c93d7c974390ca791b715b2cd,
-        type: 3}
-      propertyPath: waveConfigs.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 722847600783504366, guid: e48b4a5c93d7c974390ca791b715b2cd,
-        type: 3}
-      propertyPath: waveConfigs.Array.data[2]
-      value: 
-      objectReference: {fileID: 11400000, guid: cd7a8fe8faada1a42961cb13ab7ecd35,
-        type: 2}
     - target: {fileID: 722847600783504367, guid: e48b4a5c93d7c974390ca791b715b2cd,
         type: 3}
       propertyPath: m_Name
