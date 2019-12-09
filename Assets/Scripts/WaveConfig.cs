@@ -6,7 +6,7 @@ using UnityEngine;
 public class WaveConfig : ScriptableObject {
 
     [SerializeField] GameObject enemyPrefab;
-    [SerializeField] GameObject pathPrefab;
+    [SerializeField] List<GameObject> pathsPrefabs;
     [SerializeField] float timeBetweenSpawns = 0.5f;
     [SerializeField] float spawnRandomFactor = 0.3f;
     [SerializeField] int numberOfEnemies = 5;
@@ -14,9 +14,13 @@ public class WaveConfig : ScriptableObject {
 
     public GameObject GetEnemyPrefab() { return enemyPrefab; }
 
-    public List<Transform> GetWaypoints() {
+    public int GetPathsCount() {
+        return pathsPrefabs.Count;
+    }
+
+    public List<Transform> GetWaypoints(int pathIndex) {
         var waveWaypoints = new List<Transform>();
-        foreach (Transform child in pathPrefab.transform) {
+        foreach (Transform child in pathsPrefabs[pathIndex].transform) {
             waveWaypoints.Add(child);
         }
         return waveWaypoints;

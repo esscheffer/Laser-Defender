@@ -6,17 +6,14 @@ public class EnemyPathing : MonoBehaviour {
 
     WaveConfig waveConfig;
     List<Transform> waypoints;
+    int pathIndex = 0;
 
     int waypointIndex = 0;
 
     void Start() {
-        waypoints = waveConfig.GetWaypoints();
+        waypoints = waveConfig.GetWaypoints(pathIndex);
         transform.position = waypoints[waypointIndex].position;
         waypointIndex++;
-    }
-
-    public void SetWaveConfig(WaveConfig waveConfig) {
-        this.waveConfig = waveConfig;
     }
 
     void Update() {
@@ -30,5 +27,13 @@ public class EnemyPathing : MonoBehaviour {
         } else {
             Destroy(gameObject);
         }
+    }
+
+    public void SetWaveConfig(WaveConfig waveConfig) {
+        this.waveConfig = waveConfig;
+    }
+
+    public void SetPathIndex(int pathIndex) {
+        this.pathIndex = pathIndex;
     }
 }
